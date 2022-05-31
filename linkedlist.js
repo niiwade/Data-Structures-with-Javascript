@@ -124,7 +124,7 @@ linkedList.prototype.removeTail = function(){
 // const links = new linkedList()
 
 // links.addtoHead(100)
-// links.addtoHead(200)
+// links.addtoHead(200) 
 // links.addtoTail(300)
 
 // links.removeTail()
@@ -137,6 +137,32 @@ linkedList.prototype.removeTail = function(){
 
 linkedList.prototype.search = function(searchValue){
 
- 
+  //create variable and the current node to the head node
+  
+ let currentNode = this.head;
+
+  //travese through the linked list in the while loop through node to node
+  while(currentNode){
+     
+    //check to see if search value is in the list
+  if (currentNode.value === searchValue) return currentNode.value
+
+    //move to the next node
+    currentNode = currentNode.next
+  }
+  return null
   
 }
+
+
+const link = new linkedList ()
+
+link.addtoHead(100)
+link.addtoHead(200)
+link.addtoHead("Hello")
+link.addtoTail(400)
+link.addtoTail("World")
+link.addtoTail(600)
+
+
+console.log (link.search(600))
